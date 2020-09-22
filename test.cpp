@@ -15,4 +15,11 @@ TEST_CASE ("SubtractN for ints", "[subN]") {
     REQUIRE(result_v.size() == 4);
     REQUIRE(result_v[0] == 0);
     REQUIRE(result_v[rand_ind] == v[rand_ind] - n);
+};
+
+TEST_CASE ("Factorials for ints", "[Factorial]") {
+    REQUIRE(Factorial(0) == 1);
+    REQUIRE(Factorial(5) == 120);
+    REQUIRE(Factorial(9) == 362880);
+    REQUIRE(Factorial(11) == 39916800);
 }
