@@ -54,7 +54,11 @@ std::vector<int> SquaresUntil(int n);
 int NthFibonacci(int n);
 
 // takes an int, n, and returns the factorial of that int (n!)
-int Factorial(int n);
+int Factorial(int n) {
+    if (n == 0)
+        return 1;
+    return n * Factorial(n - 1);
+}
 
 // returns -1 if the number is negative and 1 if positive
 int Sign(int num);
@@ -109,12 +113,18 @@ std::vector<std::string> AddN(std::vector<std::string>, std::string n);
 
 
 // subtracts n to each element of the vector
-std::vector<int> SubtractN(std::vector<int>, int n);
+std::vector<int> SubtractN(std::vector<int> v, int n) {
+    for (int i = 0; i < v.size(); i++) {
+        v[i] -= n;
+    }
+
+    return v;
+}
 
 // subtracts n to each element of the vector
 std::vector<double> SubtractN(std::vector<double>, double n);
 
-int main() {
-    std::cout << "Hello World!" << std::endl;
-    return 0;
-}
+// int main() {
+//     std::cout << "Hello World!" << std::endl;
+//     return 0;
+// }
